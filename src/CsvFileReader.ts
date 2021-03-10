@@ -11,12 +11,12 @@ export type MatchData = [
   string
 ];
 
-export abstract class CsvFileReader {
-  data: MatchData[] = [];
+export abstract class CsvFileReader <T>{
+  data: T[] = [];
 
   constructor(public fileName: string) {}
 
-  abstract mapRow(row: string[]): MatchData;
+  abstract mapRow(row: string[]): T;
 
   read(): void {
     this.data = fs
