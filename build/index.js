@@ -4,6 +4,7 @@ var WinsAnalysis_1 = require("./analyzers/WinsAnalysis");
 var CsvFileReader_1 = require("./CsvFileReader");
 var MatchReader_1 = require("./MatchReader");
 var ConsoleReport_1 = require("./reportTarget/ConsoleReport");
+var HtmlReport_1 = require("./reportTarget/HtmlReport");
 var Summary_1 = require("./Summary");
 // Create an Object that satisfy the data reader interface
 var csvFileReader = new CsvFileReader_1.CsvFileReader('football.csv');
@@ -11,6 +12,7 @@ var csvFileReader = new CsvFileReader_1.CsvFileReader('football.csv');
 var matchReader = new MatchReader_1.MatchReader(csvFileReader);
 matchReader.load();
 var consoleReport = new ConsoleReport_1.ConsoleReport();
+var htmlReport = new HtmlReport_1.HtmlReport();
 var winAnalysis = new WinsAnalysis_1.WinsAnalysis('Man United');
-var summary = new Summary_1.Summary(winAnalysis, consoleReport);
+var summary = new Summary_1.Summary(winAnalysis, htmlReport);
 summary.buildAndPrintReport(matchReader.matches);
