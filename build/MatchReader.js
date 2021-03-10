@@ -7,7 +7,6 @@ var MatchReader = /** @class */ (function () {
         this.reader = reader;
         this.matches = [];
     }
-    ;
     MatchReader.prototype.load = function () {
         this.reader.read();
         this.matches = this.reader.data.map(function (row) {
