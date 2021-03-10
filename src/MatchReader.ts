@@ -10,7 +10,7 @@ interface DataReader {
 
 export class MatchReader {
   matches: MatchData[] = [];
-  constructor(public reader: DataReader);
+  constructor(public reader: DataReader){};
 
   load(): void {
     this.reader.read();
